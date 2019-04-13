@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./app/index.pug",
-    "build": "parcel build -d ./docs ./app/index.pug"
+    "build": "parcel build -d ./docs --public-url . ./app/index.pug"
   },
   "keywords": [],
   "author": "",
