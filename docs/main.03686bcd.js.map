@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.ts"],"names":[],"mappings":";AAEA,aAFA,IAAM,EAAI,SAAS,cAAc,KAAK,UAEtC,SAAS,iBAAiB,mBAAoB,SAAA,GAC5C,EAAE,SAAU,UAAY","file":"main.03686bcd.js","sourceRoot":"../app","sourcesContent":["const _ = document.querySelector.bind(document)\n\ndocument.addEventListener(\"DOMContentLoaded\", e => {\n  _(\".main\")!.innerHTML = \"hello parcel!\"\n})\n"]}
