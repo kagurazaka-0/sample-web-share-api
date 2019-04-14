@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel ./app/index.pug",
-    "build": "parcel build -d ./docs --public-url . ./app/index.pug"
+    "start": "rm dist/* && parcel ./app/index.pug",
+    "build": "rm docs/* && parcel build -d ./docs --public-url . ./app/index.pug"
   },
   "keywords": [],
   "author": "",
