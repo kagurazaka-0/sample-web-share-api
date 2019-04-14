@@ -6,3 +6,8 @@ body {
   margin: 10px 0;
   width: 100%;
 }
+
+p .fas ~ span,
+a ~ a {
+  margin-left: 10px;
+}
