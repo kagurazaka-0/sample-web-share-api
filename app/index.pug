@@ -8,5 +8,21 @@ html(lang="ja")
     title sample-web-share-api
     link(rel="stylesheet", href="./style.scss")
   body
-    div.main
     script(src="./main.ts")
+    include ./includes/top.pug
+    .my-main
+      .my-content
+        article#danger.message.is-danger.my-not-show
+          .message-header
+            p
+              i.fas.fa-exclamation-circle
+              span Browser is not supported WebShareAPI.
+          .message-body このブラウザはWebShareAPIに対応してません。
+        .share#share1
+          pre
+            code.js.
+              navigator.share({url: "aaa"})
+          button.button.is-fullwidth.is-primary
+            span.icon.is-small
+              i.fas.fa-share-square
+            span 共有する

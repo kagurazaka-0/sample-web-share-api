@@ -1,7 +1,20 @@
 import "bulma"
 import "@fortawesome/fontawesome-free/css/all.css"
-import "highlightjs"
+///@ts-ignore
+import hljs from "highlightjs"
 
 const _ = document.querySelector.bind(document)
+const __ = document.querySelectorAll.bind(document)
 
-document.addEventListener("DOMContentLoaded", e => {})
+const isSupportedWebShareAPI = !!navigator.share
+
+document.addEventListener("DOMContentLoaded", e => {
+  hljs.initHighlightingOnLoad()
+
+  // _(".my-content")!.innerHTML = "hello parcel!"
+
+  if (!isSupportedWebShareAPI) {
+    _("#danger")!.classList.remove("my-not-show")
+    __("button").forEach(el => (el.disabled = true))
+  }
+})

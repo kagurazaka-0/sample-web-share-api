@@ -1,3 +1,24 @@
 body {
   font-family: sans-serif;
 }
+
+.my-not-show {
+  display: none;
+}
+
+.my-main {
+  margin-top: 10px;
+  width: 100%;
+  .my-content {
+    width: 95vw;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+    background-color: #eeeeee;
+  }
+}
+
+p .fas ~ span {
+  margin-left: 10px;
+}
