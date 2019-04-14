@@ -18,6 +18,7 @@
     "typescript": "^3.4.3"
   },
   "dependencies": {
-    "bulma": "^0.7.4"
+    "bulma": "^0.7.4",
+    "highlightjs": "^9.12.0"
   }
 }
