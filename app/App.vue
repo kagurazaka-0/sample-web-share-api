@@ -7,12 +7,12 @@
           span Browser is not supported WebShareAPI.
       .message-body このブラウザはWebShareAPIに対応してません。
     .shares
-      .share(v-for="option of options")
+      .share(v-for="value of values")
         pre
-          .title title
+          .title {{value.name}}
           code.js.
-            {{ option | toStringFromObj }}
-        button(:disabled="!isSupportedWebShareAPI", @click="handleShareClick(option)").button.is-fullwidth.is-primary
+            {{ value.option | toStringFromObj }}
+        button(:disabled="!isSupportedWebShareAPI", @click="handleShareClick(value.option)").button.is-fullwidth.is-primary
           span.icon.is-small
             i.fas.fa-share-square
           span 共有する
@@ -35,6 +35,10 @@ const toStringFromObj = (obj: { [x: string]: any }) => {
 }
 
 type Option = { url: string } | { text: string } | { title: string }
+interface AAA {
+  name: string
+  option: Option
+}
 
 @Component({
   filters: {
@@ -44,10 +48,39 @@ type Option = { url: string } | { text: string } | { title: string }
 export default class App extends Vue {
   isSupportedWebShareAPI = isSupportedWebShareAPI
 
-  options: Array<Option> = [
-    { title: "Hello WebShareAPI!" },
-    { url: location.href },
-    { url: "https://qiita.com/katsuya_U" }
+  values: Array<AAA> = [
+    {
+      name: "タイトルのみ",
+      option: { title: "Hello WebShareAPI!" }
+    },
+    {
+      name: "テキストのみ",
+      option: { text: "Hello WebShareAPI!(Text)" }
+    },
+    {
+      name: "このサイトのURLのみ",
+      option: { url: location.href }
+    },
+    {
+      name: "他のサイトのURLのみ",
+      option: { url: "https://qiita.com/katsuya_U" }
+    },
+    {
+      name: "タイトルとテキスト",
+      option: { title: "Title", text: "Text" }
+    },
+    {
+      name: "タイトルとURL",
+      option: { title: "Title", url: location.href }
+    },
+    {
+      name: "テキストとURL",
+      option: { text: "Text", url: location.href }
+    },
+    {
+      name: "タイトルとテキストとURL",
+      option: { title: "Title", text: "Text", url: location.href }
+    }
   ]
 
   handleShareClick(option: Option) {
@@ -76,16 +109,11 @@ export default class App extends Vue {
       left: 0;
 
       background-color: gray;
-      padding: 0 10px;
+      padding: 1px 10px;
       font-size: 1rem;
       color: white;
       font-weight: normal;
     }
   }
-}
-
-p .fas ~ span,
-a ~ a {
-  margin-left: 10px;
 }
 </style>
