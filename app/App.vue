@@ -85,6 +85,12 @@ export default class App extends Vue {
 
   handleShareClick(option: Option) {
     navigator.share!(option)
+      .then(p => {
+        console.log("success!", p)
+      })
+      .catch(e => {
+        console.log("error!", e)
+      })
   }
 }
 </script>
