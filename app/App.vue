@@ -11,7 +11,7 @@
         pre
           .title {{value.name}}
           code.js.
-            {{ value.option | toStringFromObj }}
+            navigator.share({{ value.option | toStringFromObj }})
         button(:disabled="!isSupportedWebShareAPI", @click="handleShareClick(value.option)").button.is-fullwidth.is-primary
           span.icon.is-small
             i.fas.fa-share-square
