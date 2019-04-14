@@ -78,6 +78,8 @@ export default class App extends Vue {
       background-color: gray;
       padding: 0 10px;
       font-size: 1rem;
+      color: white;
+      font-weight: normal;
     }
   }
 }
