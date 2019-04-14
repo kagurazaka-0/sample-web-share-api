@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA,KACE,uBAGF,SACE,aAAA,CACA,WAGF,gBAEE","file":"style.2304da93.css","sourceRoot":"../app","sourcesContent":["body {\n  font-family: sans-serif;\n}\n\n.my-main {\n  margin: 10px 0;\n  width: 100%;\n}\n\np .fas ~ span,\na ~ a {\n  margin-left: 10px;\n}\n"]}
